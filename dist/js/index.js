@@ -15,7 +15,6 @@
   \*********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
 /***/ (function(module) {
 
 "use strict";
@@ -206,16 +205,6 @@ eval("/** @license React v0.20.1\n * scheduler-tracing.development.js\n *\n * Co
 /*! export unstable_wrapCallback [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_exports__ */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 52:26-46 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 125:13-33 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 149:24-44 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 193:15-35 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 548:28-48 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 565:25-45 */
-/*! CommonJS bailout: exports.unstable_shouldYield(...) prevents optimization as exports is passed as call context at 578:74-102 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 591:20-40 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 695:20-40 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 804:24-44 */
 /***/ (function(__unused_webpack_module, exports) {
 
 "use strict";
@@ -311,7 +300,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \**************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_require__ */
-eval("/* provided dependency */ var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* provided dependency */ var ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nvar name = 'Josh Perez';\nvar element = /*#__PURE__*/React.createElement(\"h1\", null, \"Hello, \", name);\nconsole.log(ReactDOM, React);\nReactDOM.render(element, document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/js/index.jsx?");
+eval("/* provided dependency */ var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* provided dependency */ var ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nvar name = 'Josh Perez';\nvar element = /*#__PURE__*/React.createElement(\"h1\", null, \"Hello, \", name);\nconsole.log('test123');\nconsole.log(ReactDOM, React);\nReactDOM.render(element, document.getElementById('root'));\n\n//# sourceURL=webpack:///./src/js/index.jsx?");
 }();
 /******/ })()
 ;

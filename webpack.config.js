@@ -19,7 +19,7 @@ module.exports = {
             template: 'src/index.html'
         }),
         new CleanWebpackPlugin({ // 可自動刪除指定的路徑位址
-            cleanAfterEveryBuildPatterns: ['dist']
+            cleanAfterEveryBuildPatterns: ['dist', '!index.html']
         }),
         new MiniCssExtractPlugin({ // 將 CSS 抽離存成檔案再做引入
             filename: 'css/[name].css'

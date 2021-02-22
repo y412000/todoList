@@ -1,6 +1,7 @@
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
 
+console.log('test123');
 console.log(ReactDOM, React)
 ReactDOM.render(
   element,
