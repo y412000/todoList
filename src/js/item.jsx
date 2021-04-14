@@ -1,8 +1,11 @@
+import * as Btn from './button.jsx';
+
 class ListItem extends React.Component {
   render() {
     const item = this.props.item;
     const type = this.props.type;
     return (<li className={`${type}__item`}>
+      <Btn.Close/>
       {type === 'pend' ?
         <ins className="createTime">{item.createTime}</ins> :
         <ins className="updateTime">{item.updateTime}</ins>}
@@ -21,7 +24,6 @@ class List extends React.Component {
     return <ul className={`${this.props.type}__list`}>{allItems}</ul>
   }
 }
-
 
 
 export default List;

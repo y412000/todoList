@@ -1,9 +1,5 @@
-body {
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import 'style.scss';
+h1 {
     color: red;
-    display: grid;
-
-    h1 {
-        color: BLUE;
-        transform: translate(30px);
-    }
 }

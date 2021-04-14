@@ -1,4 +1,5 @@
 import List from './item.jsx';
+import '../scss/main.scss';
 
 const todos = [{
   createTime: '2020/4/11',

@@ -70,6 +70,17 @@ module.exports = {
                     'sass-loader', // 將 SASS / SCSS 進行編譯// 自動增加前綴詞
                 ]
             },
+            {
+                test: /\.(eot|woff|woff2|ttf|svg)(\?\S*)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/',
+                        publicPath: '../fonts/'
+                    }
+                }]
+            }
         ]
     }
 }
