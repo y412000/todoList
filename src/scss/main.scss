@@ -1,5 +1,19 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'style.scss';
-h1 {
-    color: red;
+
+$color_gr: 2A2828;
+$color_ge: #A2A7A5;
+$color_lge: #DAE2DF;
+$color_be: #F6F4F4;
+
+* {
+    color: $color_be;
+}
+
+body {
+    background-color: $color_ge;
+}
+
+li {
+    font-size: 14px;
 }

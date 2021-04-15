@@ -1,9 +1,22 @@
+@font-face {
+    font-family: 'NotoSansTC';
+    src: url(../fonts/NotoSansTC-Regular.otf);
+}
+
 * {
     box-sizing: border-box;
     position: relative;
     margin: 0px;
     padding: 0px;
+    font-family: 'NotoSansTC';
 }
+
+html,
+body,
+body>div {
+    height: 100%
+}
+
 
 ins {
     text-decoration: none;
@@ -16,6 +29,166 @@ button {
     cursor: pointer;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-type: none;
+}
+
+.h_ {
+    &100 {
+        height: 100%;
+
+    }
+
+    &80 {
+        height: 80%;
+    }
+
+    &60 {
+        height: 60%;
+    }
+
+    &40 {
+        height: 40%;
+    }
+
+    &20 {
+        height: 20%;
+    }
+}
+
+.w_ {
+    &100 {
+        width: 100%;
+
+
+    }
+
+    &80 {
+        width: 80%;
+    }
+
+    &60 {
+        width: 60%;
+    }
+
+    &40 {
+        width: 40%;
+    }
+
+    &20 {
+        width: 20%;
+    }
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+
+    &.dir- {
+        &c {
+            flex-direction: column;
+        }
+
+        &c-rev {
+            flex-direction: column-reverse;
+        }
+
+        &r {
+            flex-direction: row;
+        }
+
+        &r-rev {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.hor- {
+        &l {
+            justify-content: flex-start;
+        }
+
+        &r {
+            justify-content: flex-end;
+        }
+
+        &c {
+            justify-content: center;
+        }
+
+        &sa {
+            justify-content: space-around;
+        }
+
+        &sb {
+            justify-content: space-between;
+        }
+
+        &se {
+            justify-content: space-evenly;
+        }
+    }
+
+    &.ver- {
+        &t {
+            align-content: flex-start;
+        }
+
+        &b {
+            align-content: flex-end;
+        }
+
+        &c {
+            align-content: center;
+        }
+
+        &sa {
+            align-content: space-around;
+        }
+
+        &sb {
+            align-content: space-between;
+        }
+
+        &se {
+            align-content: space-evenly;
+        }
+
+        &str {
+            align-content: stretch;
+        }
+    }
+
+    &.item- {
+        &t {
+            align-items: flex-start;
+        }
+
+        &b {
+            align-items: flex-end;
+        }
+
+        &c {
+            align-items: center;
+        }
+
+        &base {
+            align-items: baseline;
+        }
+
+        &str {
+            align-items: stretch;
+        }
+    }
+}
+
+.title {
+    text-align: center;
 }
