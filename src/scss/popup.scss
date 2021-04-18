@@ -1,0 +1,98 @@
+$color_light: #FFFAF4;
+$color_dark: #242424;
+$color_medium: #EBD6D6;
+
+.pop {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba($color_dark, 0.3);
+
+    * {
+        color: $color_dark;
+    }
+
+    &__ {
+        &container {
+            background-color: $color_light;
+            padding: 15px 20px 25px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba($color_dark, 0.3);
+        }
+
+        &title {
+            top: -12px;
+        }
+
+        &content {
+            padding: 10px 0px;
+        }
+
+        &close {
+            align-self: flex-end;
+            display: inline-block;
+            font-size: 25px;
+            top: -5px;
+            right: -5px;
+            width: 35px;
+            height: 35px;
+        }
+
+        &reminder{
+            background-color: $color_medium;
+            margin: 10px 0px;
+            font-size: 16px;
+
+            > * {
+                color: darken(saturate($color_medium, 30%), 40%)
+            }
+            p {
+                padding: 10px 0px;
+            }
+        }
+
+        &footer {
+            padding-top: 15px;
+
+            button {
+                padding: 6px 35px;
+                margin: 0px 15px;
+                color: $color_light;
+                font-size: 16px;
+            }
+        }
+
+        &confirm {
+            background-color: #1B7FE4;
+        }
+
+        &cancel {
+            background-color: #FF5151;
+        }
+    }
+
+    &-show {
+        animation-name: fadeIn;
+        animation-duration: 0.3s;
+
+        .pop__container{
+            animation-name: slideDown;
+            animation-duration: 0.5s;
+        }
+    }
+
+    &-hide {
+        animation-name: fadeOut;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+
+        .pop__container{
+            animation-name: slideUp;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
+    }
+}

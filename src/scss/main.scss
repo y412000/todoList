@@ -1,7 +1,9 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import 'keyframe.scss';
 @import 'style.scss';
+@import 'popup.scss';
 
-$color_gr: 2A2828;
+$color_gr: #2A2828;
 $color_ge: #A2A7A5;
 $color_lge: #DAE2DF;
 $color_be: #F6F4F4;
@@ -16,4 +18,26 @@ body {
 
 li {
     font-size: 14px;
+}
+
+
+.todo {
+    &__ {
+        &item {
+            width: 500px;
+        }
+    }
+}
+
+.add_todo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $color_be;
+    padding: 6px 15px;
+
+    &,
+    & * {
+        color: $color_ge;
+    }
 }

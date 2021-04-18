@@ -8,8 +8,8 @@ class ListItem extends React.Component {
       <li className={`${type}__item`}>
 
         {item.fulfill ?
-          <ins className="updateTime">{item.updateTime}</ins> :
-          <ins className="createTime">{item.createTime}</ins>
+          <time className="endTime">{item.endTime}</time> :
+          <time className="startTime">{item.startTime}</time>
         }
         <span className="content">{item.content}</span>
 
@@ -34,7 +34,7 @@ class List extends React.Component {
     });
 
     return (
-      <div>
+      <div className="todo__item flex dir-c">
         <h3 className="title">{this.props.title}</h3>
         <ul className={`${this.props.type}__list`}>{allItems}</ul>
       </div>
