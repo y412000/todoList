@@ -41,14 +41,15 @@ $color_medium: #EBD6D6;
             height: 35px;
         }
 
-        &reminder{
+        &reminder {
             background-color: $color_medium;
             margin: 10px 0px;
             font-size: 16px;
 
-            > * {
+            >* {
                 color: darken(saturate($color_medium, 30%), 40%)
             }
+
             p {
                 padding: 10px 0px;
             }
@@ -78,7 +79,7 @@ $color_medium: #EBD6D6;
         animation-name: fadeIn;
         animation-duration: 0.3s;
 
-        .pop__container{
+        .pop__container {
             animation-name: slideDown;
             animation-duration: 0.5s;
         }
@@ -89,7 +90,7 @@ $color_medium: #EBD6D6;
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
 
-        .pop__container{
+        .pop__container {
             animation-name: slideUp;
             animation-duration: 0.5s;
             animation-fill-mode: forwards;
