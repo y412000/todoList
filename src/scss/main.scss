@@ -26,6 +26,21 @@ li {
         &item {
             width: 500px;
         }
+
+        &time{
+            display: inline-block;
+            width: 80px;
+        }
+
+        &ctn{
+            display: inline-block;
+            width: 200px;
+        }
+
+        &btnWrap {
+            display: inline-block;
+        }
+        
     }
 }
 

@@ -7,15 +7,21 @@ class ListItem extends React.Component {
     return (
       <li className={`${type}__item`}>
         {item.fulfill ? (
-          <time className="endTime">{item.endTime}</time>
+          <time className="todo__time endTime">{item.endTime}</time>
         ) : (
-          <time className="startTime">{item.startTime}</time>
+          <time className="todo__time startTime">{item.startTime}</time>
         )}
-        <span className="content">{item.content}</span>
+        <span className="todo__ctn content">{item.content}</span>
 
-        {type === "pend" ? <Btn.Check /> : type === "ful" ? <Btn.Redo /> : null}
+        <div className="todo__btnWrap">
+          {type === "pend" ? (
+            <Btn.Check />
+          ) : type === "ful" ? (
+            <Btn.Redo />
+          ) : null}
 
-        <Btn.Times />
+          <Btn.Times />
+        </div>
       </li>
     );
   }

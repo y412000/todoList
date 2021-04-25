@@ -91,8 +91,8 @@ class Btn_cancel extends React.Component {
 
 class Add extends React.Component {
   render() {
-	const param = this.props.param;
-	
+    const param = this.props.param;
+console.log(this.props)
     return (
       <Popup
         title="新增代辦事項"
@@ -119,6 +119,18 @@ class Add extends React.Component {
               onChange={this.props.changeContent}
               value={param.content}
             ></input>
+          </div>
+          <div className="form__item">
+            <label htmlFor="todo_ctn">優先度</label>
+            <select
+              id="todo_pri"
+              value={param.priority}
+              onChange={this.props.changePriority}
+            >
+              <option value="high">高</option>
+              <option value="medium">中</option>
+              <option value="low">低</option>
+            </select>
           </div>
         </div>
       </Popup>

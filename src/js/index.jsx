@@ -64,7 +64,8 @@ class App extends React.Component {
         popup: false,
         time: "",
         content: "",
-        errorMsg: "",
+        priority: "medium",
+        errorMsg: ""
       },
     };
   }
@@ -146,12 +147,19 @@ class App extends React.Component {
     });
   };
 
+  changePriority = (e) => {
+    this.set_value({
+      priority: e.target.value
+    });
+  }
+
   appendItem = () => {
+    const param = this.state.add;
     todos.push({
       id: _uuid(),
-      startTime: this.state.add.time,
-      content: this.state.add.content,
-      priority: "high",
+      startTime: param.time,
+      content: param.content,
+      priority: param.priority,
       fulfill: false,
       endTime: "",
     });
@@ -184,6 +192,7 @@ class App extends React.Component {
             noBubbling={this.noBubbling}
             changeTime={this.changeTime}
             changeContent={this.changeContent}
+            changePriority={this.changePriority}
             param={this.state.add}
           />
         )}
