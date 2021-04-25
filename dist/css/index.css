@@ -329,7 +329,7 @@ ol {
 }
 .pop__reminder {
   background-color: #EBD6D6;
-  margin: 10px 0px;
+  margin-top: -10px;
   font-size: 16px;
 }
 .pop__reminder > * {

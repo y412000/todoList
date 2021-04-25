@@ -8,14 +8,22 @@ class Popup extends React.Component {
     };
 
     this.noBubbling = this.noBubbling.bind(this);
+    this.confirm = this.confirm.bind(this);
     this.close = this.close.bind(this);
   }
 
+  // 取消往下傳遞狀況
   noBubbling(e) {
     e.stopPropagation();
     this.props.noBubbling;
   }
 
+  // 確認送出
+  confirm() {
+    !!this.props.confirm() && this.setState({ show: false });
+  }
+
+  // 取消/關閉畫面
   close() {
     this.setState({ show: false });
     this.props.close();
@@ -40,16 +48,16 @@ class Popup extends React.Component {
           </div>
 
           <div className="pop__content">{this.props.children}</div>
-          {this.props.error && (
+          {this.props.errorMsg && (
             <div className="pop__reminder w_100 flex">
               <i className="fas fa-exclamation-circle"></i>
-              <p className="title">{this.props.error}</p>
+              <p className="title">{this.props.errorMsg}</p>
             </div>
           )}
 
           <div className="pop__footer w_100 flex">
-            {this.props.confirm && <Btn_confirm />}
-            {this.props.cancel && <Btn_cancel click={this.close} />}
+            {this.props.showConfirm && <Btn_confirm click={this.confirm} />}
+            {this.props.showCancel && <Btn_cancel click={this.close} />}
           </div>
         </section>
       </section>
@@ -82,52 +90,17 @@ class Btn_cancel extends React.Component {
 }
 
 class Add extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: "",
-      content: "",
-      error: "",
-    };
-
-    this.changeTime = this.changeTime.bind(this);
-    this.changeCtn = this.changeCtn.bind(this);
-  }
-
-  changeTime(e) {
-    const value = e.target.value;
-    const reg = new RegExp(
-      /^([1-9]\d{3})\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/
-    );
-    const formatTime = value.match(reg);
-    const isValid =
-      !!formatTime && isTimeValid(formatTime[1], formatTime[2], formatTime[3]);
-
-    if ((formatTime && isValid) || value.length === 0) {
-      this.setState({
-        time: e.target.value,
-        error: "",
-      });
-    } else {
-      this.setState({
-        time: e.target.value,
-        error: !formatTime ? "格式不正確" : "時間不正確",
-      });
-    }
-  }
-
-  changeCtn(e) {
-    this.setState({ content: escapeHtml(e.target.value) });
-  }
-
   render() {
+	const param = this.props.param;
+	
     return (
       <Popup
         title="新增代辦事項"
-        confirm={true}
-        cancel={true}
+        showConfirm={true}
+        showCancel={true}
+        confirm={this.props.confirm}
         close={this.props.close}
-        error={this.state.error}
+        errorMsg={param.errorMsg}
       >
         <div className="form flex dir-c item-t">
           <div className="form__item">
@@ -135,40 +108,22 @@ class Add extends React.Component {
             <input
               id="startDate"
               placeholder="YYYY/MM/DD"
-              onChange={this.changeTime}
-              value={this.state.time}
+              onChange={this.props.changeTime}
+              value={param.time}
             ></input>
           </div>
           <div className="form__item">
             <label htmlFor="todo_ctn">內容</label>
             <input
               id="todo_ctn"
-              onChange={this.changeCtn}
-              value={this.state.content}
+              onChange={this.props.changeContent}
+              value={param.content}
             ></input>
           </div>
         </div>
       </Popup>
     );
   }
-}
-
-function isTimeValid(y, m, d) {
-  const date = new Date(`${y}/${m}/${d}`);
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-
-  return year == y && month == parseInt(m) && day == parseInt(d);
-}
-
-function escapeHtml(unsafe) {
-  return unsafe
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
 }
 
 export { Popup, Add };

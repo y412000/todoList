@@ -46,7 +46,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: { // 將 ES6 轉為 ES5 -> 編譯 JSX 為 js
-                        presets: ['@babel/preset-react', '@babel/preset-env']
+                        presets: ['@babel/preset-react', '@babel/preset-env'],
+                        plugins: ['transform-class-properties']
                     }
                 }
             },
