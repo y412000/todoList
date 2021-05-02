@@ -27,6 +27,17 @@ function isTimeValid(y, m, d) {
 }
 
 /**
+ * 將毫秒轉換回日期格式
+ * @param {number} ms 毫秒時間
+ * @returns 日期
+ */
+function getDate(ms) {
+  const d = new Date(ms);
+
+  return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`;
+}
+
+/**
  * 將字串跳脫
  * @param {string} unsafe 任意字串
  * @returns {string} 已跳脫字串
@@ -55,4 +66,4 @@ window._uuid = () => {
   });
 };
 
-export { isTimeFormat, isTimeValid, escapeHtml };
+export { isTimeFormat, isTimeValid, escapeHtml, getDate};

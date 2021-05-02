@@ -17,19 +17,24 @@ body {
 }
 
 li {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 
 .todo {
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
     &__ {
         &item {
             width: 500px;
+            margin: 20px;
         }
 
         &time{
             display: inline-block;
-            width: 80px;
+            width: 90px;
         }
 
         &ctn{
@@ -40,14 +45,29 @@ li {
         &btnWrap {
             display: inline-block;
         }
+
+        &high {
+            &, & * {
+            color: 	#FFD2D2;
+            }
+        }
+
+        &medium{
+            &, & * {
+            color: #FFEEDD;
+            }
+        }
+
+        &low {
+            &, & * {
+                color: 	#C4E1E1;
+            }
+        }
         
     }
 }
 
 .add_todo {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background-color: $color_be;
     padding: 6px 15px;
 

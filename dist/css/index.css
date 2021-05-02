@@ -85,6 +85,10 @@ body > div {
   height: 100%;
 }
 
+header {
+  padding: 15px;
+}
+
 ins {
   text-decoration: none;
 }
@@ -96,6 +100,8 @@ button {
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
+  padding: 5px;
+  margin: 0px 5px;
 }
 button i {
   margin-right: 5px;
@@ -300,6 +306,9 @@ ol {
 .form__item label ~ * {
   width: calc(100% - 80px);
 }
+.form__item > input:first-child {
+  margin-right: 3.5px;
+}
 
 .pop {
   position: absolute;
@@ -400,15 +409,20 @@ body {
 }
 
 li {
-  font-size: 14px;
+  font-size: 18px;
 }
 
+.todo .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 .todo__item {
   width: 500px;
+  margin: 20px;
 }
 .todo__time {
   display: inline-block;
-  width: 80px;
+  width: 90px;
 }
 .todo__ctn {
   display: inline-block;
@@ -417,11 +431,17 @@ li {
 .todo__btnWrap {
   display: inline-block;
 }
+.todo__high, .todo__high * {
+  color: #FFD2D2;
+}
+.todo__medium, .todo__medium * {
+  color: #FFEEDD;
+}
+.todo__low, .todo__low * {
+  color: #C4E1E1;
+}
 
 .add_todo {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   background-color: #F6F4F4;
   padding: 6px 15px;
 }

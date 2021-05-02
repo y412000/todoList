@@ -92,7 +92,7 @@ class Btn_cancel extends React.Component {
 class Add extends React.Component {
   render() {
     const param = this.props.param;
-console.log(this.props)
+
     return (
       <Popup
         title="新增代辦事項"
@@ -138,4 +138,44 @@ console.log(this.props)
   }
 }
 
-export { Popup, Add };
+class Set extends React.Component {
+  render() {
+    const param = this.props.param;
+
+    return (
+      <Popup title="調整顯示項目" close={this.props.close}>
+        <div className="form flex item-t">
+          <div className="form__item">
+            <input
+              id="showPend"
+              type="checkbox"
+              onChange={this.props.changeSet}
+              checked={param.showPend}
+            ></input>
+            <label htmlFor="showPend">代辦項目</label>
+          </div>
+          <div className="form__item">
+            <input
+              id="showFul"
+              type="checkbox"
+              onChange={this.props.changeSet}
+              checked={param.showFul}
+            ></input>
+            <label htmlFor="showFul">完成項目</label>
+          </div>
+          <div className="form__item">
+            <input
+              id="showPriority"
+              type="checkbox"
+              onChange={this.props.changeSet}
+              checked={param.showPriority}
+            ></input>
+            <label htmlFor="showPriority">優先度</label>
+          </div>
+        </div>
+      </Popup>
+    );
+  }
+}
+
+export { Popup, Add, Set };

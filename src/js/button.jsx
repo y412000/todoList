@@ -47,6 +47,18 @@ class Add extends React.Component {
   }
 }
 
+class Set extends React.Component {
+  render() {
+    return (
+      <Std 
+        className={this.props.className}
+        icon="fas fa-cog"
+        click={this.props.click}
+      />
+    );
+  }
+}
+
 class Std extends React.Component {
   render() {
     return (
@@ -59,4 +71,4 @@ class Std extends React.Component {
   }
 }
 
-export { Std, Check, Times, Redo, Add };
+export { Std, Check, Times, Redo, Add, Set };
