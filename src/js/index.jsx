@@ -199,7 +199,7 @@ class App extends React.Component {
     this.setState({
       todos: this.state.todos.filter((item) => {
         return item.id !== id;
-      })
+      }),
     });
   };
 
@@ -242,38 +242,40 @@ class App extends React.Component {
     });
 
     return (
-      <section className="flex dir-c w_100 h_100">
-        <header className="flex hor-r w_100">
-          <Btn_Add className="add_todo" click={this.popup_open("add")} />
-          <Btn_Set className="set_todo" click={this.popup_open("set")} />
-        </header>
-        <main className="flex w_100 h_100">
-          <section
-            id="todos"
-            className="todo flex wrap item-t hor-sa ver-t w_100"
-          >
-            {this.state.set.showPend && (
-              <List
-                type="pend"
-                items={pends}
-                title="代辦清單"
-                showPriority={this.state.set.showPriority}
-                deleteItem={this.deleteItem}
-                fulfillItem={this.fulfillItem}
-              />
-            )}
-            {this.state.set.showFul && (
-              <List
-                type="ful"
-                items={fulfills}
-                title="完成清單"
-                showPriority={this.state.set.showPriority}
-                deleteItem={this.deleteItem}
-                revokeItem={this.revokeItem}
-              />
-            )}
-          </section>
-        </main>
+      <section class="w_100 h_100">
+        <section className="flex dir-c w_100">
+          <header className="flex hor-r w_100">
+            <Btn_Add className="add_todo" click={this.popup_open("add")} />
+            <Btn_Set className="set_todo" click={this.popup_open("set")} />
+          </header>
+          <main className="flex w_100 h_100">
+            <section
+              id="todos"
+              className="todo flex wrap item-t hor-sa ver-t w_100"
+            >
+              {this.state.set.showPend && (
+                <List
+                  type="pend"
+                  items={pends}
+                  title="代辦清單"
+                  showPriority={this.state.set.showPriority}
+                  deleteItem={this.deleteItem}
+                  fulfillItem={this.fulfillItem}
+                />
+              )}
+              {this.state.set.showFul && (
+                <List
+                  type="ful"
+                  items={fulfills}
+                  title="完成清單"
+                  showPriority={this.state.set.showPriority}
+                  deleteItem={this.deleteItem}
+                  revokeItem={this.revokeItem}
+                />
+              )}
+            </section>
+          </main>
+        </section>
         {this.state.add.popup && (
           <Popup_Add
             confirm={this.popup_send("add")}

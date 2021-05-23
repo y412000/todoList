@@ -3,6 +3,32 @@
 @import 'style.scss';
 @import 'popup.scss';
 
+@mixin maxWidth_xl() {
+    @media only screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin maxWidth_l() {
+    @media only screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin maxWidth_m() {
+
+    @media only screen and (max-width: 768px),
+    (max-height: 768px) {
+        @content;
+    }
+}
+
+@mixin maxWidth_s() {
+    @media only screen and (max-width: 576px) {
+        @content;
+    }
+}
+
 $color_gr: #2A2828;
 $color_ge: #A2A7A5;
 $color_lge: #DAE2DF;
@@ -16,54 +42,116 @@ body {
     background-color: $color_ge;
 }
 
+ul {
+    width: 400px;
+    @include maxWidth_s() {
+        width: 95%;
+    }
+}
+
 li {
     font-size: 18px;
+    display: inline-block;
+    width: 100%;
+}
+
+header {
+    padding: 15px;
+
+    @include maxWidth_s() {
+        padding: 10px 5px;
+    }
+
+    button {
+        i {
+            margin-right: 5px;
+        }
+    }
 }
 
 
+
 .todo {
+    min-height: 60%;
+
     .title {
         font-size: 24px;
         margin-bottom: 10px;
     }
+
     &__ {
         &item {
             width: 500px;
-            margin: 20px;
+            margin: 40px 20px;
+            min-height: 80%;
+            transition: margin 0.5s;
+
+            @include maxWidth_s() {
+                margin: 40px 5px;
+            }
+
+            li {
+                @include maxWidth_s() {
+                    display: inline-block;
+                    width: 100%;
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                    &:not(:last-child) {
+                        border-bottom: 1px dashed $color_lge;
+                    }
+                }
+            }
         }
 
-        &time{
+        &time {
             display: inline-block;
             width: 90px;
+            transition: width 0.5s;
+            vertical-align: top;
         }
 
-        &ctn{
+        &ctn {
             display: inline-block;
-            width: 200px;
+            width: calc(100% - 90px - 70px);
+
+            @include maxWidth_s() {
+                float: right;
+                width: 100%;
+            }
         }
 
         &btnWrap {
             display: inline-block;
+            width: 70px;
+            display: inline-block;
+            position: absolute;
+            right: 0px;
         }
 
         &high {
-            &, & * {
-            color: 	#FFD2D2;
+
+            &,
+            & * {
+                color: #FFD2D2;
             }
         }
 
-        &medium{
-            &, & * {
-            color: #FFEEDD;
+        &medium {
+
+            &,
+            & * {
+                color: #FFEEDD;
             }
         }
 
         &low {
-            &, & * {
-                color: 	#C4E1E1;
+
+            &,
+            & * {
+                color: #C4E1E1;
             }
         }
-        
+
     }
 }
 
