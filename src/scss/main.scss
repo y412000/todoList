@@ -17,8 +17,7 @@
 
 @mixin maxWidth_m() {
 
-    @media only screen and (max-width: 768px),
-    (max-height: 768px) {
+    @media only screen and (max-width: 768px) {
         @content;
     }
 }
@@ -43,8 +42,10 @@ body {
 }
 
 ul {
-    width: 400px;
-    @include maxWidth_s() {
+    width: 80%;
+    max-width: 450px;
+    transition: all 0.5s;
+    @include maxWidth_m() {
         width: 95%;
     }
 }
@@ -57,7 +58,7 @@ li {
 
 header {
     padding: 15px;
-
+    transition: all 0.5s;
     @include maxWidth_s() {
         padding: 10px 5px;
     }
@@ -81,24 +82,27 @@ header {
 
     &__ {
         &item {
-            width: 500px;
+            width: 45%;
             margin: 40px 20px;
             min-height: 80%;
-            transition: margin 0.5s;
+            transition: all 0.5s;
+
+            @include maxWidth_m() {
+                width: 100%;
+            }
 
             @include maxWidth_s() {
                 margin: 40px 5px;
             }
 
             li {
-                @include maxWidth_s() {
-                    display: inline-block;
-                    width: 100%;
-                    padding-bottom: 5px;
-                    margin-bottom: 5px;
-                    &:not(:last-child) {
-                        border-bottom: 1px dashed $color_lge;
-                    }
+                display: inline-block;
+                width: 100%;
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+
+                &:not(:last-child) {
+                    border-bottom: 1px dashed $color_lge;
                 }
             }
         }
@@ -113,11 +117,8 @@ header {
         &ctn {
             display: inline-block;
             width: calc(100% - 90px - 70px);
-
-            @include maxWidth_s() {
-                float: right;
-                width: 100%;
-            }
+            float: right;
+            width: 100%;
         }
 
         &btnWrap {

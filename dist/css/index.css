@@ -406,9 +406,11 @@ body {
 }
 
 ul {
-  width: 400px;
+  width: 80%;
+  max-width: 450px;
+  transition: all 0.5s;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   ul {
     width: 95%;
   }
@@ -422,6 +424,7 @@ li {
 
 header {
   padding: 15px;
+  transition: all 0.5s;
 }
 @media only screen and (max-width: 576px) {
   header {
@@ -440,26 +443,29 @@ header button i {
   margin-bottom: 10px;
 }
 .todo__item {
-  width: 500px;
+  width: 45%;
   margin: 40px 20px;
   min-height: 80%;
-  transition: margin 0.5s;
+  transition: all 0.5s;
+}
+@media only screen and (max-width: 768px) {
+  .todo__item {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 576px) {
   .todo__item {
     margin: 40px 5px;
   }
 }
-@media only screen and (max-width: 576px) {
-  .todo__item li {
-    display: inline-block;
-    width: 100%;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-  }
-  .todo__item li:not(:last-child) {
-    border-bottom: 1px dashed #DAE2DF;
-  }
+.todo__item li {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.todo__item li:not(:last-child) {
+  border-bottom: 1px dashed #DAE2DF;
 }
 .todo__time {
   display: inline-block;
@@ -470,12 +476,8 @@ header button i {
 .todo__ctn {
   display: inline-block;
   width: calc(100% - 90px - 70px);
-}
-@media only screen and (max-width: 576px) {
-  .todo__ctn {
-    float: right;
-    width: 100%;
-  }
+  float: right;
+  width: 100%;
 }
 .todo__btnWrap {
   display: inline-block;
